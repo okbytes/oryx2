@@ -16,15 +16,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_BSLS,
     KC_MINUS,       KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_EQUAL,
-    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
-    KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_LALT, KC_COMMA),MT(MOD_LCTL, KC_DOT),KC_SLASH,       KC_RIGHT_SHIFT, 
+    MT(MOD_LCTL, KC_ESCAPE),KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
+    KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           MT(MOD_LGUI, KC_M),MT(MOD_LALT, KC_COMMA),MT(MOD_LCTL, KC_DOT),KC_SLASH,       KC_RIGHT_SHIFT, 
                                                     KC_BSPC,        MT(MOD_LGUI, KC_TAB),                                MT(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_ENTER),LT(1, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
-    KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_CIRC,        KC_AMPR,        KC_ASTR,        LGUI(KC_LBRC),  KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,
+    KC_TRANSPARENT, KC_EXLM,        KC_AT,          KC_HASH,        KC_DLR,         KC_PERC,                                        KC_CIRC,        KC_AMPR,        KC_ASTR,        KC_NO,          KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,
     LALT(LSFT(KC_MINUS)),LGUI(LSFT(KC_1)),LGUI(LSFT(KC_2)),LGUI(LSFT(KC_3)),LGUI(LSFT(KC_4)),LGUI(LSFT(KC_5)),                                LGUI(LSFT(KC_C)),KC_NO,          LALT(LGUI(KC_I)),KC_NO,          KC_NO,          KC_AUDIO_VOL_UP,
     KC_TRANSPARENT, KC_LEFT_SHIFT,  KC_LEFT_CTRL,   KC_LEFT_ALT,    KC_LEFT_GUI,    KC_NO,                                          KC_LEFT,        KC_DOWN,        KC_UP,          KC_RIGHT,       KC_ENTER,       KC_AUDIO_VOL_DOWN,
-    KC_LEFT_SHIFT,  LALT(LCTL(LSFT(KC_A))),LALT(LCTL(LSFT(KC_S))),LALT(LCTL(LSFT(KC_D))),LALT(LCTL(LSFT(KC_F))),LALT(LCTL(LSFT(KC_G))),                                LGUI(LCTL(KC_SPACE)),KC_SPACE,       KC_LEFT_ALT,    KC_LEFT_CTRL,   KC_NO,          KC_RIGHT_SHIFT, 
+    KC_LEFT_SHIFT,  LALT(LCTL(LSFT(KC_A))),LALT(LCTL(LSFT(KC_S))),LALT(LCTL(LSFT(KC_D))),LALT(LCTL(LSFT(KC_F))),LALT(LCTL(LSFT(KC_G))),                                LGUI(LCTL(KC_SPACE)),KC_SPACE,       LGUI(KC_LBRC),  LGUI(KC_RBRC),  KC_NO,          KC_RIGHT_SHIFT, 
                                                     KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT
   ),
 };
@@ -56,9 +56,9 @@ void keyboard_post_init_user(void) {
 }
 
 const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][3] = {
-    [0] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {20,255,255}, {219,255,255}, {0,0,0}, {0,0,0}, {0,0,255}, {0,0,0} },
+    [0] = { {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {219,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {131,255,255}, {20,255,255}, {219,255,255}, {0,0,0}, {0,0,0}, {0,0,255}, {0,0,0} },
 
-    [1] = { {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {152,255,255}, {0,0,255}, {0,0,255}, {0,0,255}, {41,255,255}, {0,0,0}, {74,255,255}, {219,255,255}, {20,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {188,255,255}, {188,255,255}, {188,255,255}, {188,255,255}, {188,255,255}, {0,0,0}, {131,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {188,255,255}, {152,255,255}, {41,255,255}, {0,0,255}, {0,0,0}, {0,0,255}, {0,0,0}, {0,0,0}, {0,245,245}, {188,255,255}, {188,255,255}, {188,255,255}, {188,255,255}, {0,0,255}, {152,255,255}, {41,255,255}, {0,0,255}, {20,255,255}, {219,255,255}, {0,0,0}, {0,0,0}, {0,0,255}, {0,0,0} },
+    [1] = { {0,0,0}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {152,255,255}, {0,0,255}, {0,0,255}, {0,0,255}, {41,255,255}, {219,255,255}, {74,255,255}, {219,255,255}, {20,255,255}, {131,255,255}, {0,0,0}, {0,0,0}, {188,255,255}, {188,255,255}, {188,255,255}, {188,255,255}, {188,255,255}, {0,0,0}, {131,255,255}, {74,255,255}, {74,255,255}, {74,255,255}, {0,0,0}, {152,255,255}, {41,255,255}, {0,0,255}, {0,0,0}, {0,0,255}, {0,0,0}, {0,0,0}, {0,245,245}, {188,255,255}, {188,255,255}, {188,255,255}, {188,255,255}, {0,0,255}, {152,255,255}, {41,255,255}, {0,0,255}, {188,255,255}, {188,255,255}, {0,0,0}, {0,0,0}, {0,0,255}, {0,0,0} },
 
 };
 
