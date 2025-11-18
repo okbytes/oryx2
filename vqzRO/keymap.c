@@ -16,8 +16,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_voyager(
     KC_GRAVE,       KC_1,           KC_2,           KC_3,           KC_4,           KC_5,                                           KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_BSLS,
     KC_MINUS,       KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,                                           KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_EQUAL,
-    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,       
-    KC_LEFT_SHIFT,  MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_LGUI, KC_COMMA),MT(MOD_LALT, KC_DOT),MT(MOD_LCTL, KC_SLASH),KC_RIGHT_SHIFT, 
+    KC_ESCAPE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,                                           KC_H,           KC_J,           KC_K,           KC_L,           KC_SCLN,        KC_QUOTE,
+    KC_LEFT_SHIFT,  MT(MOD_LCTL, KC_Z),KC_X,           KC_C,           KC_V,           KC_B,                                           KC_N,           KC_M,           MT(MOD_LGUI, KC_COMMA),MT(MOD_LALT, KC_DOT),MT(MOD_LCTL, KC_SLASH),KC_RIGHT_SHIFT,
                                                     KC_BSPC,        MT(MOD_LGUI, KC_TAB),                                MT(MOD_LALT | MOD_LCTL | MOD_LGUI, KC_ENTER),LT(1, KC_SPACE)
   ),
   [1] = LAYOUT_voyager(
@@ -135,16 +135,16 @@ const key_override_t three_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_3, KC
 const key_override_t four_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_4, KC_LBRC);
 // Shift 5 is $
 const key_override_t five_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_5, KC_DLR);
-// Shift 6 is &
-const key_override_t six_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_6, KC_AMPR);
+// Shift 6 is *
+const key_override_t six_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_6, KC_ASTR);
 // Shift 7 is ]
 const key_override_t seven_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_7, KC_RBRC);
 // Shift 8 is )
 const key_override_t eight_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_8, KC_RPRN);
 // Shift 9 is }
 const key_override_t nine_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_9, KC_RCBR);
-// Shift 0 is *
-const key_override_t zero_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_ASTR);
+// Shift 0 is &
+const key_override_t zero_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_0, KC_AMPR);
 
 const key_override_t *key_overrides[] = {
   &two_key_override,
